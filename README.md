@@ -33,6 +33,7 @@ JavaScript: Implements functionality to validate and display phone number validi
 
 To run this project locally, simply clone the repository and open the index.html file in your web browser.
   git clone <git@github.com>:faridafaqiri/telephone-number-validator.git
+  
   cd telephone-number-validator
 
 ## Contributing
