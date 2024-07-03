@@ -1,30 +1,36 @@
-document.getElementById('check-btn').addEventListener('click', () => {
+document.getElementById('check-btn').addEventListener('click', function() {
   const userInput = document.getElementById('user-input').value.trim();
   const resultsDiv = document.getElementById('results-div');
 
   if (userInput === '') {
-    resultsDiv.textContent = 'Please provide a phone number';
-    return;
+      alert('Please provide a phone number');
+      return;
   }
 
   const validPatterns = [
-    /^1?\s?\d{3}[-\s]?\d{3}[-\s]?\d{4}$/,
-    /^1?\s?\(\d{3}\)\s?\d{3}[-\s]?\d{4}$/,
-    /^1?\s?\(\d{3}\)\d{3}[-\s]?\d{4}$/,
-    /^1?\(\d{3}\)\d{3}[-\s]?\d{4}$/,
-    /^\d{10}$/,
+      /^1?\s?\d{3}[-\s]?\d{3}[-\s]?\d{4}$/,
+      /^1?\s?\(\d{3}\)\s?\d{3}[-\s]?\d{4}$/,
+      /^1?\s?\(\d{3}\)\d{3}[-\s]?\d{4}$/,
+      /^1?\(\d{3}\)\d{3}[-\s]?\d{4}$/,
+      /^\d{10}$/
   ];
 
-  const isValid = validPatterns.some((pattern) => pattern.test(userInput));
+  let isValid = false;
+  for (const pattern of validPatterns) {
+      if (pattern.test(userInput)) {
+          isValid = true;
+          break;
+      }
+  }
 
   if (isValid) {
-    resultsDiv.textContent = `Valid US number: ${userInput}`;
+      resultsDiv.textContent = `Valid US number: ${userInput}`;
   } else {
-    resultsDiv.textContent = `Invalid US number: ${userInput}`;
+      resultsDiv.textContent = `Invalid US number: ${userInput}`;
   }
 });
 
-document.getElementById('clear-btn').addEventListener('click', () => {
+document.getElementById('clear-btn').addEventListener('click', function() {
   document.getElementById('user-input').value = '';
   document.getElementById('results-div').textContent = '';
 });
