@@ -12,10 +12,10 @@ document.getElementById('check-btn').addEventListener('click', () => {
     /^1?\s?\(\d{3}\)\s?\d{3}[-\s]?\d{4}$/,
     /^1?\s?\(\d{3}\)\d{3}[-\s]?\d{4}$/,
     /^1?\(\d{3}\)\d{3}[-\s]?\d{4}$/,
-    /^\d{10}$/
+    /^\d{10}$/,
   ];
 
-  const isValid = validPatterns.some(pattern => pattern.test(userInput));
+  const isValid = validPatterns.some((pattern) => pattern.test(userInput));
 
   if (isValid) {
     resultsDiv.textContent = `Valid US number: ${userInput}`;
