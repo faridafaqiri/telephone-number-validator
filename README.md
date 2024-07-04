@@ -6,7 +6,7 @@ This project implements a simple web application to validate US phone numbers en
 
 ## Demo 📸
 
-![Project Demo](./images/Capture.JPG)
+![Project Demo](./images/Capture1.JPG)
 
 ## Features ⭐
 
