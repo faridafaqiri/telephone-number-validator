@@ -7,7 +7,7 @@
 body {
   background-image: url(./images/33971671_l-1024x1024.jpg);
   background-repeat: no-repeat;
-  background-size: 1300px 1300px;
+  background-size: 1300px 1400px;
   background-position: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #0a0a23;
@@ -164,7 +164,7 @@ label {
   body {
     height: 100vh;
   }
-  
+
   h1 {
     width: 60%;
     font-size: 20px;
