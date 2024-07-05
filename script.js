@@ -1,30 +1,37 @@
-document.getElementById('check-btn').addEventListener('click', () => {
-  const userInput = document.getElementById('user-input').value.trim();
+document.addEventListener('DOMContentLoaded', () => {
+  const checkBtn = document.getElementById('check-btn');
+  const clearBtn = document.getElementById('clear-btn');
+  const userInput = document.getElementById('user-input');
   const resultsDiv = document.getElementById('results-div');
 
-  if (userInput === '') {
-    resultsDiv.textContent = 'Please provide a phone number';
-    return;
-  }
+  checkBtn.addEventListener('click', () => {
+    const userInputValue = userInput.value.trim();
 
-  const validPatterns = [
-    /^1?\s?\d{3}[-\s]?\d{3}[-\s]?\d{4}$/,
-    /^1?\s?\(\d{3}\)\s?\d{3}[-\s]?\d{4}$/,
-    /^1?\s?\(\d{3}\)\d{3}[-\s]?\d{4}$/,
-    /^1?\(\d{3}\)\d{3}[-\s]?\d{4}$/,
-    /^\d{10}$/,
-  ];
+    if (userInputValue === '') {
+      resultsDiv.textContent = 'Please provide a phone number';
+      return;
+    }
 
-  const isValid = validPatterns.some((pattern) => pattern.test(userInput));
+    const validPatterns = [
+      /^1?\s?\d{3}[-\s]?\d{3}[-\s]?\d{4}$/,
+      /^1?\s?\(\d{3}\)\s?\d{3}[-\s]?\d{4}$/,
+      /^1?\s?\(\d{3}\)\d{3}[-\s]?\d{4}$/,
+      /^1?\(\d{3}\)\d{3}[-\s]?\d{4}$/,
+      /^\d{10}$/,
+    ];
 
-  if (isValid) {
-    resultsDiv.textContent = `Valid US number: ${userInput}`;
-  } else {
-    resultsDiv.textContent = `Invalid US number: ${userInput}`;
-  }
-});
+    const isValid = validPatterns.some((pattern) => pattern.test(userInputValue));
 
-document.getElementById('clear-btn').addEventListener('click', () => {
-  document.getElementById('user-input').value = '';
-  document.getElementById('results-div').textContent = '';
+    if (isValid) {
+      resultsDiv.textContent = `Valid US number: ${userInputValue}`;
+    } else {
+      resultsDiv.textContent = `Invalid US number: ${userInputValue}`;
+    }
+  });
+
+  clearBtn.addEventListener('click', () => {
+    userInput.value = '';
+    resultsDiv.textContent = '';
+  });
+
 });
