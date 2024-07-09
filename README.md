@@ -8,6 +8,10 @@ This project implements a simple web application to validate US phone numbers en
 
 ![Project Demo](./images/Capture1.JPG)
 
+## Live Link 
+
+https://faridafaqiri.github.io/telephone-number-validator/
+
 ## Features ⭐
 
 Input Validation: Validates various formats of US phone numbers, including:
